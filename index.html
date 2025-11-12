@@ -16,20 +16,46 @@
     .btn-cv{background:var(--accent);color:white}
     .btn-gh{background:transparent;border:2px solid var(--accent);color:var(--accent)}
     small{display:block;margin-top:12px;color:var(--muted);font-size:12px}
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111;
+        --card: #1a1a1a;
+        --accent: #4da3ff;
+        --muted: #aaa;
+      }
+      body {
+        background: var(--bg);
+        color: white;
+      }
+      .card {
+        background: var(--card);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      }
+      .btn-cv {
+        background: var(--accent);
+        color: black;
+      }
+      .btn-gh {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <!-- optional avatar -->
     <!-- <img class="avatar" src="https://avatars.githubusercontent.com/qj25" alt="avatar"> -->
+     <img class="avatar" src="misc/profile.jpg" alt="Profile picture">
+
     <h1>Chen Qi Jing</h1>
-    <p>Robotics PhD Student at Nanyang Technological University — scan to view my CV or GitHub</p>
+    <p>Robotics PhD Student at Nanyang Technological University</p>
 
     <!-- UPDATE these links -->
     <a class="btn btn-cv" href="https://drive.google.com/file/d/1cMA4NC2_RCRqNH0dt1yTaTwuZFUd402I/view?usp=sharing" target="_blank" rel="noopener">View / Download CV</a>
     <a class="btn btn-gh" href="https://github.com/qj25" target="_blank" rel="noopener">View my GitHub</a>
 
-    <small>Tip: If the CV doesn't open, open the short link: <strong>qj25.github.io</strong></small>
+    <!-- <small>Tip: If the CV doesn't open, open the short link: <strong>qj25.github.io</strong></small> -->
   </div>
 </body>
 </html>
