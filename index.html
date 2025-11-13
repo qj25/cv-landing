@@ -9,7 +9,16 @@
     html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
     body{display:flex;align-items:center;justify-content:center;background:var(--bg);padding:24px}
     .card{width:100%;max-width:420px;background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(20,20,40,0.08);padding:28px;text-align:center}
-    img.avatar{width:86px;height:86px;border-radius:999px;object-fit:cover;margin-bottom:14px}
+    /* img.avatar{width:86px;height:86px;border-radius:999px;object-fit:cover;margin-bottom:14px} */
+    img.avatar {
+      width: 86px;
+      height: 86px;
+      border-radius: 999px;
+      object-fit: cover;
+      margin-bottom: 14px;
+      border: 3px solid var(--accent); /* 👈 new circular border */
+      box-shadow: 0 0 10px rgba(191, 201, 244, 0.3); /* optional subtle glow */
+    }
     h1{margin:0;font-size:20px}
     p{margin:8px 0 20px;color:var(--muted);font-size:14px}
     .btn{display:block;text-decoration:none;padding:14px;border-radius:10px;margin:10px 0;font-weight:600}
@@ -20,7 +29,7 @@
       :root {
         --bg: #111;
         --card: #1a1a1a;
-        --accent: #4da3ff;
+        --accent: #bfc9f4;
         --muted: #aaa;
       }
       body {
@@ -39,7 +48,53 @@
         border-color: var(--accent);
         color: var(--accent);
       }
+      .btn-cv:hover {
+        background: #aab6f0; /* slightly darker hover tone */
+        color: #000;
+        transform: translateY(-2px);
+      }
+      .btn-gh:hover {
+        border-color: #aab6f0; /* slightly darker hover tone */
+        color: #aab6f0;
+        transform: translateY(-2px);
+      }
     }
+    .contact-buttons {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+    
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--card);
+      color: var(--accent);
+      font-size: 20px;
+      text-decoration: none;
+      border: 2px solid var(--accent);
+      transition: all 0.2s ease;
+    }
+    
+    .icon-btn:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .icon-btn:hover, .btn-cv:hover, .btn-gh:hover {
+      box-shadow: 0 0 10px rgba(191, 201, 244, 0.6);
+    }
+    .icon {
+      width: 22px;
+      height: 22px;
+      filter: invert(86%) sepia(8%) saturate(634%) hue-rotate(198deg) brightness(102%) contrast(95%);
+    }
+    
   </style>
 </head>
 <body>
@@ -54,7 +109,14 @@
     <!-- UPDATE these links -->
     <a class="btn btn-cv" href="https://drive.google.com/file/d/1cMA4NC2_RCRqNH0dt1yTaTwuZFUd402I/view?usp=sharing" target="_blank" rel="noopener">View / Download CV</a>
     <a class="btn btn-gh" href="https://github.com/qj25" target="_blank" rel="noopener">View my GitHub</a>
-
+    <div class="contact-buttons">
+      <a class="icon-btn" href="tel:+6591550292" title="Call me">
+        <img src="misc/phone.svg" alt="Phone" class="icon">
+      </a>
+      <a class="icon-btn" href="mailto:qijing89586@gmail.com" title="Email me">
+        <img src="misc/mail.svg" alt="Email" class="icon">
+      </a>
+    </div>
     <!-- <small>Tip: If the CV doesn't open, open the short link: <strong>qj25.github.io</strong></small> -->
   </div>
 </body>
